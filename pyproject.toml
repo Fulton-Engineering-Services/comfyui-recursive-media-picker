@@ -1,0 +1,21 @@
+[project]
+name = "comfyui-recursive-media-picker"
+version = "1.0.0"
+description = "Recursive subfolder listing for ComfyUI's LoadImage/LoadImageMask/LoadAudio/LoadVideo pickers, plus a fix for nested-file basename collisions in GET /view."
+authors = [{ name = "J. Patrick Fulton" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = ["License :: OSI Approved :: MIT License"]
+
+[project.urls]
+Repository = "https://github.com/Fulton-Engineering-Services/comfyui-recursive-media-picker"
+Issues = "https://github.com/Fulton-Engineering-Services/comfyui-recursive-media-picker/issues"
+
+# Comfy Registry manifest (https://registry.comfy.org) -- publishing metadata
+# consumed by `comfy node publish`. PublisherId must match a registered
+# publisher; fill in before first publish.
+[tool.comfy]
+PublisherId = ""
+DisplayName = "Recursive Media Picker"
+Icon = ""
