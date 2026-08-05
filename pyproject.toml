@@ -12,6 +12,16 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 Repository = "https://github.com/Fulton-Engineering-Services/comfyui-recursive-media-picker"
 Issues = "https://github.com/Fulton-Engineering-Services/comfyui-recursive-media-picker/issues"
 
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# N999: __init__.py lives in a hyphenated directory (comfyui-recursive-media-picker),
+#   which is the ComfyUI custom-node convention -- not a valid Python module name.
+# BLE001: Broad catches are deliberate at every patch site; a picker or the /view
+#   middleware must never crash the request chain or take a node down.
+ignore = ["N999", "BLE001"]
+
 # Comfy Registry manifest (https://registry.comfy.org) -- publishing metadata
 # consumed by `comfy node publish`. PublisherId must match a registered
 # publisher; fill in before first publish.

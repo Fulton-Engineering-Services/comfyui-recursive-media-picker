@@ -101,9 +101,7 @@ def _relative_media_files(root: str) -> list[str]:
 
         if rel_dir == ".":
             rel_dir = ""
-            dirnames[:] = [
-                d for d in dirnames if d not in EXCLUDE and not d.startswith(".")
-            ]
+            dirnames[:] = [d for d in dirnames if d not in EXCLUDE and not d.startswith(".")]
         elif rel_dir.split(os.sep)[0] in EXCLUDE:
             dirnames[:] = []
             continue
@@ -269,8 +267,7 @@ else:
     _say(
         f"patched {patched} in {(time.monotonic() - started) * 1000:.0f}ms; "
         f"{detail}; exclude={sorted(EXCLUDE) or 'none'}; "
-        f"{_install_nested_view_middleware()}"
-        + (f"; NOT FOUND {missing}" if missing else "")
+        f"{_install_nested_view_middleware()}" + (f"; NOT FOUND {missing}" if missing else "")
     )
 
 # No new nodes -- this pack only widens existing pickers. ComfyUI expects the
